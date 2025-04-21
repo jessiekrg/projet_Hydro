@@ -27,4 +27,4 @@ Indice_H = {
 def Calcul_Profil_H(Chaine):
     return [Indice_H[aa] for aa in Chaine] # Retourne une liste de la valeur de chaque aa
 
-#Étape x : Maplotlib
+#Étape x : Maplotlibhhh
