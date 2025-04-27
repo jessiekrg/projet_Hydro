@@ -36,7 +36,8 @@ for i in seq:
     indice += Calcul_Profil_H(i)
 
 #Etape 7 : Calcul du profil d’hydrophobicité avec une moyenne glissante.
-fenetre = 9
+
+fenetre = 20
 liste_profil = []
 for i in range (len(indice)):
     f = fenetre//2
@@ -47,12 +48,17 @@ for i in range (len(indice)):
 
     liste_profil.append(profil)
 
-#Étape x : Maplotlibhhh
-plt.plot(range(len(liste_profil)), liste_profil, color='red')
+#Étape x : Maplotlib 
+plt.plot(range(len(liste_profil)), liste_profil, color='black')
 plt.xlim(0, len(liste_profil))
+plt.xticks(range(0, len(liste_profil), 50 ))
+plt.xticks(rotation = 45)
 plt.ylim(-4.5, 4.5)
 plt.title("Profil d'hydrophobicité lissé")
 plt.xlabel("Position dans la séquence")
 plt.ylabel("Hydrophobicité moyenne")
 plt.axhline(0, color='gray', linestyle='--')  # Ligne de séparation
 plt.grid(True)
+plt.show()
+
+
